@@ -30,4 +30,5 @@ import {TestComponent} from "./modules/products/components/test/test.component";
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

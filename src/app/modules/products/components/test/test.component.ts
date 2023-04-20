@@ -57,7 +57,6 @@ export class TestComponent implements OnInit {
 
   onSubmit(): void {
     if(this.isNewObject){
-
       this.productService.createProduct(this.form.value)
         .subscribe(data => {
           this.router.navigate(['list']);
@@ -83,6 +82,10 @@ export class TestComponent implements OnInit {
 
   onBack() {
     this.router.navigate(['list']);
+  }
+
+  test(data: any) {
+    console.log('test:::',data);
   }
 }
 
