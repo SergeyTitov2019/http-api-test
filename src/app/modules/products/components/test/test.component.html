@@ -30,13 +30,8 @@
     </div>
     <div class="form-group">
       <label for="type">Type:</label>
-      <select formControlName="type" name="type" class="form-control" id="type">
-        <option value="Холодильник">Холодильник</option>
-        <option value="Микроволновая печь">Микроволновая печь</option>
-        <option value="Посудомоечная машина">Посудомоечная машина</option>
-        <option value="Телевизор">Телевизор</option>
-        <option value="Варочная поверхность">Варочная поверхность</option>
-        <option value="Стиральная машина">Стиральная машина</option>
+      <select formControlName="type" name="type" class="form-control" id="type"  >
+          <option  *ngFor="let option of options" value="{{ option }}">{{ option }}</option>
       </select>
 
       <div *ngIf="form.get('type')?.invalid &&
@@ -71,6 +66,6 @@
     <button class="btn btn-success" (click)="onSubmit()">{{buttonTitle}}</button>
   </form>
   <button class="btn btn-danger" (click)="onBack()">Go Back</button>
-  <button class="btn btn-outline-success" (click)="test(form.get('description')?.errors)">Тест</button>
+  <button class="btn btn-success" (click)="test(form.get('description')?.errors)">Тест</button>
 </div>
 

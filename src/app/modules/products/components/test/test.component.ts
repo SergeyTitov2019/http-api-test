@@ -19,6 +19,16 @@ export class TestComponent implements OnInit {
   buttonTitle: string;
   option: boolean = true;
   isNewObject: boolean = true
+  options: string[] = [
+    'Холодильник',
+    'Микроволновая печь',
+    'Посудомоечная машина',
+    'Телевизор',
+    'Варочная поверхность',
+    'Стиральная машина',
+    'Планшет',
+    'Телефон',
+  ]
 
   constructor(
     private router: Router,
@@ -41,6 +51,8 @@ export class TestComponent implements OnInit {
     });
     this.productTitle = "Add Product"
     this.buttonTitle = "Add"
+    console.log('form:', this.form.get('type'))
+
 
     if (productId) {
       this.isNewObject = false;
