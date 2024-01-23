@@ -10,6 +10,8 @@ import { AddComponent } from './modules/products/components/add/add.component';
 import { EditComponent } from './modules/products/components/edit/edit.component';
 import {SelectComponent} from "./modules/products/components/select/select.component";
 import {TestComponent} from "./modules/products/components/test/test.component";
+import { PostsComponent } from './modules/posts/components/posts/posts.component';
+import { PostPageComponent } from './modules/posts/components/post-page/post-page.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import {TestComponent} from "./modules/products/components/test/test.component";
     AddComponent,
     EditComponent,
     SelectComponent,
-    TestComponent
+    TestComponent,
+    PostsComponent,
+    PostPageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,6 @@
 {
   "products": [
     {
-      "id": 2,
-      "name": "SAMSUNG RB29FSRNDSA/UA -55",
-      "type": "Телевизор",
-      "description": "Верхнее светодиодное освещение\nВнутренняя LED-индикация работы\nЛоток для соусов в холодильной камере\nМногопоточная система охлаждения Multi Flow\nСигнализация открытой двери"
-    },
-    {
       "id": 3,
       "name": "SAMSUNG RT32K5000S9/UA",
       "type": "Холодильник",
@@ -37,22 +31,41 @@
       "description": "Вкусная и ароматная выпечка из натуральных компонентов, приготовлена собственноручно, станет настоящим украшением стола, что возможно благодаря хлебопечке. В таком случае, лучшим выбором станет модель BM1210BK от проверенного производителя Gorenje. Этот простой девайс станет незаменимым помощником для каждой хозяйки. "
     },
     {
-      "id": 8,
-      "name": "Плита комбинированная Gorenje K5351WF",
-      "type": "Варочная поверхность",
-      "description": "Духовка Gorenje K5351 повторяет конструкцию стандартной дровяной печи, благодаря чему воздух свободно циркулирует по всей внутренней части. Таким образом, блюдо эффективно готовится со всех сторон, а также становится сочным и хрустящим. Вместе с тем современная технология MultiAir равномерно распределяет жар по всей духовке, благодаря чему вы можете активно готовить на всех уровнях."
+      "name": "Banana",
+      "amount": 1515,
+      "id": 25
+    }
+  ],
+  "posts": [
+    {
+      "title": "It’s New Hampshire primary eve.",
+      "content": " Here’s the latest. Nikki Haley raced across New Hampshire on Monday to hustle for voters in what may amount to her last, best chance to prevent or at least delay a 2024 rematch between President Biden and former President Donald J. Trump.",
+      "id": 1
     },
     {
-      "id": 9,
-      "name": "",
-      "type": "Микроволновая печь",
-      "description": ""
+      "title": "Election 2024",
+      "content": "Haley Mounts Last Stand in New Hampshire Against an Ascendant Trump",
+      "id": 2
     },
     {
-      "id": 10,
-      "name": "Sharp ",
-      "type": "Телевизор",
-      "description": "sdasdasdasdas "
+      "title": "Election 2024",
+      "content": "Haley Mounts Last Stand in New Hampshire Against an Ascendant Trump",
+      "id": 3
+    },
+    {
+      "title": "Election 2024",
+      "content": "Haley Mounts Last Stand in New Hampshire Against an Ascendant Trump",
+      "id": 4
+    },
+    {
+      "title": "",
+      "content": "",
+      "id": 5
+    },
+    {
+      "title": "",
+      "content": "",
+      "id": 6
     }
   ]
 }

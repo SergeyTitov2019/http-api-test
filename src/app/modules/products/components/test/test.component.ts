@@ -51,7 +51,7 @@ export class TestComponent implements OnInit {
     });
     this.productTitle = "Add Product"
     this.buttonTitle = "Add"
-    console.log('form:', this.form.get('type'))
+    // console.log('form:', this.form.get('type'))
 
 
     if (productId) {

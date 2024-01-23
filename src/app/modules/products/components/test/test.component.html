@@ -51,17 +51,21 @@
              [class.invalid]="form.get('description')?.invalid && (form.get('description')?.dirty || form.get('description')?.touched)"
       >
       <div *ngIf="form.get('description')?.invalid && form.get('description')?.errors && (form.get('description')?.dirty || form.get('description')?.touched)">
+
         <small class="text-danger" *ngIf="form.get('name')?.hasError('required')">
           This field is required.
         </small>
+
         <small class="text-danger" *ngIf="form.get('description')?.hasError('minlength')">
           The minimum length for this field is {{form.get('description')?.errors?.minlength.requiredLength}} characters.
         </small>
+
         <small class="text-danger"
                *ngIf="form.get('description')?.hasError('maxlength')">
           The maximum length for this field is {{form.get('description')?.errors?.maxlength.requiredLength}} characters.
         </small>
       </div>
+
     </div>
     <button class="btn btn-success" (click)="onSubmit()">{{buttonTitle}}</button>
   </form>

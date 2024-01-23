@@ -1,12 +1,14 @@
+// @ts-ignore
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { ProductInterface} from "../interfeses/product.interface";
-import {  Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { Observable} from "rxjs";
 
+// @ts-ignore
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
+
 export class ProductService {
 
   private baseUrl: string = 'http://localhost:3000/products';
