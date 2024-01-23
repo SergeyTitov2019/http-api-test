@@ -1,0 +1,21 @@
+<div class="container">
+  <form #postForm='ngForm' (ngSubmit)="onCreatePost(postForm.value)">
+  <div class="row">
+    <label for="title">Title</label>
+    <input id='title' class="form-control" type="text" name="title" ngModel>
+  </div>
+  <div class="row">
+    <label for="content">Content</label>
+    <input id="content" type="text" class="form-control" name="content" ngModel>
+  </div>
+  <div class="row">
+    <button class="btn btn-primary" >Send Post</button>
+    <button class="btn btn-default" (click)="onFetchPost()">Get Post</button>
+
+  </div>
+    <hr>
+    <div class="row">
+      <button class="btn btn-primary" (click)="onPagePost()">See the Posts</button>
+    </div>
+  </form>
+</div>

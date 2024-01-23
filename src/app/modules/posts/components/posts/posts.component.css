@@ -1,0 +1,11 @@
+.container{
+  margin-top: 3rem;
+  width: 70vh;
+}
+.row{
+  margin-top: 2rem;
+ }
+button{
+  width: 120px;
+  margin-right: 1rem;
+}

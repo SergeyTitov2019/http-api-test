@@ -1,0 +1,10 @@
+button{
+  min-width: 120px;
+  margin-right: 1rem;
+}
+.container{
+  margin: 2rem;
+}
+li{
+  list-style: none;
+}
