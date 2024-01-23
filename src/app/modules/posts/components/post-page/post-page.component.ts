@@ -14,7 +14,7 @@ export class PostPageComponent implements OnInit {
 
   private basePostUrl: string = postUrl;
   loadedPost: PostModel[] = []
-
+  error = null
 
   constructor(private http: HttpClient,
               private route: ActivatedRoute,
@@ -23,16 +23,16 @@ export class PostPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-this.fetchData()
+    this.fetchData()
   }
 
-  fetchData(){
+  fetchData() {
     this.http
-      .get<{[key: number]: PostModel}>(this.basePostUrl)
+      .get<{ [key: number]: PostModel }>(this.basePostUrl)
       .pipe(map(responseData => {
         const postArray = []
-        for(let key in responseData){
-          if(responseData.hasOwnProperty(key)){
+        for (let key in responseData) {
+          if (responseData.hasOwnProperty(key)) {
             postArray.push({...responseData[key], id: key})
           }
         }
@@ -40,16 +40,10 @@ this.fetchData()
       }))
       .subscribe(post => {
         this.loadedPost = post
-        console.log('post:', post);
-        console.log('this.loadedPost:', this.loadedPost);
       })
-
   }
-
 
   onGetBack() {
     this.router.navigate([''])
-
   }
-
 }

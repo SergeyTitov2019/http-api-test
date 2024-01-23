@@ -2,20 +2,21 @@
   <form #postForm='ngForm' (ngSubmit)="onCreatePost(postForm.value)">
   <div class="row">
     <label for="title">Title</label>
-    <input id='title' class="form-control" type="text" name="title" ngModel>
+    <input id='title' class="form-control" type="text" required name="title" ngModel>
   </div>
   <div class="row">
     <label for="content">Content</label>
-    <input id="content" type="text" class="form-control" name="content" ngModel>
+    <input id="content" type="text" class="form-control" required name="content" ngModel>
   </div>
   <div class="row">
-    <button class="btn btn-primary" >Send Post</button>
-    <button class="btn btn-default" (click)="onFetchPost()">Get Post</button>
+    <button class="btn btn-primary" type="submit" [disabled]="!postForm.valid">Send Post</button>
+    <button class="btn btn-default" type="button" (click)="onFetchPost()">Get Post</button>
+    <button class="btn btn-danger" type="button" (click)="onClearPosts()">Clear Post</button>
 
   </div>
     <hr>
     <div class="row">
-      <button class="btn btn-primary" (click)="onPagePost()">See the Posts</button>
+      <button class="btn btn-primary"type="button" (click)="onPagePost()">See the Posts</button>
     </div>
   </form>
 </div>
