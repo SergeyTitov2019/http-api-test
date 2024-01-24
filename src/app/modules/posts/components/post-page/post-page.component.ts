@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {postUrl} from "../../data/data";
 import {PostModel} from "../../types/post.model";
 import {map} from "rxjs/operators";
+import {PostService} from "../../services/post.service";
 
 @Component({
   selector: 'app-post-page',
@@ -14,16 +15,19 @@ export class PostPageComponent implements OnInit {
 
   private basePostUrl: string = postUrl;
   loadedPost: PostModel[] = []
-  error = null
+  error = '15151515'
 
   constructor(private http: HttpClient,
               private route: ActivatedRoute,
-              private router: Router
+              private router: Router,
+              private postService: PostService
   ) {
   }
 
   ngOnInit(): void {
     this.fetchData()
+    // this.postService.fetchPosts(this.loadedPost)
+
   }
 
   fetchData() {
@@ -40,6 +44,9 @@ export class PostPageComponent implements OnInit {
       }))
       .subscribe(post => {
         this.loadedPost = post
+      }, error1 => {
+        this.error = error1.message
+        console.log('error___', error1)
       })
   }
 
