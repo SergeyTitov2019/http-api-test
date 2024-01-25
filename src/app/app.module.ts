@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +12,8 @@ import {SelectComponent} from "./modules/products/components/select/select.compo
 import {TestComponent} from "./modules/products/components/test/test.component";
 import { PostsComponent } from './modules/posts/components/posts/posts.component';
 import { PostPageComponent } from './modules/posts/components/post-page/post-page.component';
+import {AuthInterceptorService} from "./modules/posts/services/auth-interceptor.service";
+import {LoggingInterceptor} from "./modules/posts/services/logging.interceptor";
 
 @NgModule({
   declarations: [
@@ -31,7 +33,15 @@ import { PostPageComponent } from './modules/posts/components/post-page/post-pag
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptorService,
+    multi: true
+  },{
+    provide: HTTP_INTERCEPTORS,
+    useClass: LoggingInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 

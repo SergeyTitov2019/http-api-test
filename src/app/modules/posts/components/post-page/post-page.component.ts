@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 import {ActivatedRoute, Router} from "@angular/router";
 import {postUrl} from "../../data/data";
 import {PostModel} from "../../types/post.model";
@@ -31,8 +31,16 @@ export class PostPageComponent implements OnInit {
   }
 
   fetchData() {
+    let searchParams = new HttpParams()
+    searchParams = searchParams.append('print', 'pretty')
+    searchParams = searchParams.append('custom', 'text')
     this.http
-      .get<{ [key: number]: PostModel }>(this.basePostUrl)
+      .get<{ [key: number]: PostModel }>(this.basePostUrl,
+        {
+          headers: new HttpHeaders({'Custom-Headers': 'Hello'}),
+          params: searchParams
+        }
+        )
       .pipe(map(responseData => {
         const postArray = []
         for (let key in responseData) {
